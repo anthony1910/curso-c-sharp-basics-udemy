@@ -1,37 +1,58 @@
 ﻿using System;
 
 namespace Classes
-{       
-    public class myCar
+{
+    public class Vehicle
     {
-        int topSpeed;
-        string color;
 
-        public myCar (int passedTopSpeed, string passedColor)
-        {
-            topSpeed = passedTopSpeed;
-            color = passedColor;
-        }
+        int topSpeed = 90;
+        string color = "Red";
 
         public int getTopSpeed()
         {
             return topSpeed;
         }
 
-        public void paintCar(string newColor)
+        public string getColor()
         {
-            color = newColor;
+            return color;
         }
+
+        public Vehicle()
+        {
+
+        }
+
+    }
+
+    public class Truck : Vehicle
+    {
+        string size = "large";
+
+        public string getSize()
+        {
+            return size;
+        }
+    }
+
+    public class LargeTruck : Truck
+    {
+
     }
 
     class Program
     {
         static void Main(string[] args)
         {
-            myCar toyota = new myCar(89, "Red");
+            /* class myTruck
+            Truck myTruck = new Truck();
+            Console.WriteLine(myTruck.getTopSpeed().ToString());
+            Console.WriteLine(myTruck.getColor().ToString());
+            Console.ReadKey();
+            */
+            LargeTruck myNewTruck = new LargeTruck();
 
-            // Console.WriteLine(toyota.getTopSpeed().ToString();
-            toyota.paintCar("Green");
+            Console.WriteLine(myNewTruck.getSize());
             Console.ReadKey();
         }
     }
